@@ -1,17 +1,17 @@
 <html>
 
 <body>
-<p>Click the Button to Answer question 1.</p>
+<p>Click the Button to Answer question 3.</p>
 
-<button onclick="myFunction()">Question 1</button>
+<button onclick="myFunction()">Question 3</button>
 
 <p id="response"></p>
 
 <script>
 function myFunction() {
-    var person = prompt("How many Teams are in the MLS?", "Answer");
+    var person = prompt("What MLS team is local of Kansas City? (Just one word)", "Answer");
     
-    if (person == 20) {
+    if (person == "Sporting") {
         document.getElementById("response").innerHTML =
         "Good Job! You chose the correct answer of: " + person + "! Good luck on the rest of the quiz."; 
 	 document.getElementById("moveOn").innerHTML = "Continue";
@@ -30,7 +30,7 @@ function nextQuestion() {
 
 <hr>
 
-<a id="moveOn" href=Q2.html></a>
+<a id="moveOn" href=Q4.html></a>
 </body>
 
 

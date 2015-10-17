@@ -1,0 +1,38 @@
+<html>
+
+<body>
+<p>Click the Button to Answer question 2.</p>
+
+<button onclick="myFunction()">Question 2</button>
+
+<p id="response"></p>
+
+<script>
+function myFunction() {
+    var person = prompt("What number is Matt Besler?", "Answer");
+    
+    if (person == 5) {
+        document.getElementById("response").innerHTML =
+        "Good Job! You chose the correct answer of: " + person + "! Good luck on the rest of the quiz."; 
+	 document.getElementById("moveOn").innerHTML = "Continue";
+
+    } 
+    else {
+    	document.getElementById("response").innerHTML = "That was wrong";
+    	 document.getElementById("moveOn").innerHTML = "Continue";
+    }
+function nextQuestion() {
+	document.getElementById("moveOn").innerHTML = "Continue";
+	}
+
+}
+</script>
+
+<hr>
+
+<a id="moveOn" href=Q3.html></a>
+</body>
+
+
+
+</html>

@@ -1,24 +1,24 @@
 <html>
 
 <body>
-<p>Click the Button to Answer question 1.</p>
+<p>Moving along nicely!</p>
 
-<button onclick="myFunction()">Question 1</button>
+<button onclick="myFunction()">Question 4</button>
 
 <p id="response"></p>
 
 <script>
 function myFunction() {
-    var person = prompt("How many Teams are in the MLS?", "Answer");
+    var person = prompt("What is the dominant color of a soccer ball?", "Answer");
     
-    if (person == 20) {
+    if (person == "white") {
         document.getElementById("response").innerHTML =
         "Good Job! You chose the correct answer of: " + person + "! Good luck on the rest of the quiz."; 
 	 document.getElementById("moveOn").innerHTML = "Continue";
 
     } 
     else {
-    	document.getElementById("response").innerHTML = "That was wrong";
+    	document.getElementById("response").innerHTML = "That was wrong, the correct answer was:";
     	 document.getElementById("moveOn").innerHTML = "Continue";
     }
 function nextQuestion() {
@@ -30,7 +30,7 @@ function nextQuestion() {
 
 <hr>
 
-<a id="moveOn" href=Q2.html></a>
+<a id="moveOn" href=Q4.html></a>
 </body>
 
 
