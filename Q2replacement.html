@@ -1,0 +1,48 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<p>2nd time's the charm?</p>
+<body>
+<!--<a id="apiYear"></a>
+ <button onClick="getAPI()">everything</button> -->
+<button onclick="myFunction()">Question 1</button>
+
+<a id="response"></a>
+
+<script>
+function myFunction() {
+    var person = prompt("What Year?", "Answer"); 
+    var year;
+    $.ajax({
+    headers: { 'X-Auth-Token': '97bf1ac4a8d44639b619ef28e1b40e82' },
+    url: 'http://api.football-data.org/alpha/soccerseasons/354',
+    dataType: 'json',
+    type: 'GET',
+    }).done(function(response) {
+    year = response.year;
+    document.getElementById("apiYear").innerHTML = year;
+    if (person == year) {   
+        document.getElementById("response").innerHTML = "Good Job!"; 
+    //    document.getElementById("moveOn").innerHTML = "Continue";
+
+    } else {
+        document.getElementById("response").innerHTML = "That was wrong";
+    //  document.getElementById("moveOn").innerHTML = "Continue";
+    }
+    });
+    
+	document.getElementById("moveOn").innerHTML = "Continue";
+
+}
+</script>
+
+<hr>
+<a id="apiYear"></a>
+<a id="moveOn" href=Q2.html></a>
+</body>
+
+
+
+</html>

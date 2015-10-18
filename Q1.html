@@ -1,7 +1,38 @@
 <html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+   
+    <style>
+    body {background-color: #cbe86b}
+    p, h1, h2, a {color: #1c140d}
+    button {
+  background-color: #f2e9e1;
+  color: #1c140d;
+  float: middle;
+  padding: 30px;
+  border-radius: 30px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+    </style>
+
+</head>
+
+<h1>Are you ready to rumble?</h1>
+
+<br><br><br><br>
+
+
 
 <body>
-<p>Click the Button to Answer question 1.</p>
+
+
+    
+
+<!--<a id="apiYear"></a>
+ <button onClick="getAPI()">everything</button> -->
+
 
 <button onclick="myFunction()">Question 1</button>
 
@@ -9,11 +40,22 @@
 
 <script>
 function myFunction() {
-    var person = prompt("How many Teams are in the MLS?", "Answer");
+    var person = prompt("What Year is in our database?", "Answer");
     
-    if (person == 20) {
+     
+        var year;
+    $.ajax({
+    headers: { 'X-Auth-Token': '97bf1ac4a8d44639b619ef28e1b40e82' },
+    url: 'http://api.football-data.org/alpha/soccerseasons/354',
+    dataType: 'json',
+    type: 'GET',
+    }).done(function(response) {
+    year = response.year;
+    document.getElementById("apiYear").innerHTML = year;
+    });
+if (person = "year") {   
         document.getElementById("response").innerHTML =
-        "Good Job! You chose the correct answer of: " + person + "! Good luck on the rest of the quiz."; 
+        "Good Job! You chose the correct answer" + "! Good luck on the rest of the quiz."; 
 	 document.getElementById("moveOn").innerHTML = "Continue";
 
     } 
@@ -28,7 +70,7 @@ function nextQuestion() {
 }
 </script>
 
-<hr>
+<br><hr><br>
 
 <a id="moveOn" href=Q2.html></a>
 </body>
