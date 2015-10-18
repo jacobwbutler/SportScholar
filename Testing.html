@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+<script>
+	var year;
+	$.ajax({
+  	headers: { 'X-Auth-Token': '97bf1ac4a8d44639b619ef28e1b40e82' },
+  	url: 'http://api.football-data.org/alpha/soccerseasons/354',
+  	dataType: 'json',
+  	type: 'GET',
+	}).done(function(response) {
+    year = response.year;
+    document.getElementById("apiYear").innerHTML = year;
+    });
+    
+</script>
+<a id="apiYear"></a>
+<!-- <button onClick="getAPI()">everything</button> -->
+</body>
+</html>
